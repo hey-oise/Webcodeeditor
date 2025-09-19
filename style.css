@@ -1,0 +1,25 @@
+body {
+    font-size: 15pt;
+    font-family: sans-serif;
+    display: grid;
+    place-items: center;
+}
+h1{
+ text-align: center;
+}
+.card{
+  width: 80%;
+  background-color: #AAAAAA8A;
+  backdrop-filter: blur(3px);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.hbdpic{
+  width: 300px;
+  padding-top: 100px;
+}
+
+.hbdvid{
+  margin-top: 100px;
+}
