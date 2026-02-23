@@ -47,6 +47,7 @@ htmlBtnTab.style.borderTopWidth = '.3px';
 run()
 }
 }
+
 function run() {
 output.innerHTML = htmlEditor.value + '<style type="text/css" media="all">' + cssEditor.value + '</style>' + '<script>' + jsEditor + '</script>'
 }
