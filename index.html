@@ -4,29 +4,59 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Code playground</title>
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="body">
+  <div class="header"></div>
+  <div class="tabs">
+  <button class="html" onclick="moveTabs(0)">html</button>
+  <button class="css" onclick="moveTabs(100)">css</button>
+<button class="js" onclick="moveTabs(200)">js</button>
+<button class="output" onclick="moveTabs(300)">output</button>
+</div>
+</div>
+<div class="main">
+<button style="height:100px" onclick="moveTabs(100)"></button>
+<div class="editors">
+<textarea name="htmlEdiror" id="htmlEditor" cols="30"  class="htmlEditor" rows="42"><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>HTML</title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<audio autoplay loop controls >
-  <source src="./Hbdsong.mp3" type="audio/mp3">
-</audio>
-
-<h1>
-Happy birthday Enodiana Samuel<br/> 🥳🎂❤️
-</h1>
-  <img src="./hbdpic.jpeg" class="hbdpic">
-<div class="card">
-<p class="card-text">
-Happy birthday to my dear brother, my once favorite boy who's still got a special place in my heart! Despite the ups and downs, and the times you hurt me, I cherish our friendship more than ever. You're one of the sweetest souls I met in 2022, and I'm grateful for the memories we've shared. Thanks for being a friend who's always there, even when things get tough. Your kindness, love, and support mean the world to me. Here's to many more adventures together! 🎉💖 and lots of love on your special day My sweet boy🥳🥳🥳❤️❤️🥰🥰
-</p>
+  <p>Nothing to see here...</p>
+  <!-- Project -->
+  <script src="main.js"></script>
+</body>
+</html>
+</textarea>
+<textarea name="cssEditor" id="cssEditor" cols="35" class="cssEditor" rows="42">body {
+font-size: 15pt;
+}</textarea>
+<textarea name="jsEditor" id="jsEditor" cols="35" class="jsEditor" rows="42">
+console.log("hello world!")
+</textarea>
+<div class="outputEditor">
+console.log("hello world!")
 </div>
-<video class="hbdvid" controls autoplay loop>
-  <source src="./hbdvid.MOV" type="video/mp4">
-
-</video>
-
+</div>
+</div>
   <script src="main.js"></script>
 </body>
 </html>
