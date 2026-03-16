@@ -1,62 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>HTML | CSS | PLAYGROUND</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="topBar">
+            <div class="titleBar">
+                <p class="appName">HTML | CSS | PLAYGROUND</p>
+                <p class="projectName">hello</p>
+            </div>
+            <div class="tabs">
+                <button class="tab1" onclick="switchTabs('html')">
+                    index.html
+                </button>
+                <button class="tab2" onclick="switchTabs('css')">
+                    style.css
+                </button>
+                <button class="tab3" onclick="switchTabs('js')">main.js</button>
+                <div class="remaining-space"></div>
+            </div>
+        </div>
+        <div class="main">
+            <textarea name="html" class="editor1">this is html</textarea>
+            <textarea name="css" class="editor2">this is css</textarea>
+            <textarea name="js" class="editor3">this is js</textarea>
 
-  <title>Code playground</title>
-  
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body class="body">
-  <div class="header"></div>
-  <div class="tabs">
-  <button class="html" onclick="moveTabs(0)">html</button>
-  <button class="css" onclick="moveTabs(100)">css</button>
-<button class="js" onclick="moveTabs(200)">js</button>
-<button class="output" onclick="moveTabs(300)">output</button>
-</div>
-</div>
-<div class="main">
-<button style="height:100px" onclick="moveTabs(100)"></button>
-<div class="editors">
-<textarea name="htmlEdiror" id="htmlEditor" cols="30"  class="htmlEditor" rows="42"><!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>HTML</title>
-  
-  <!-- HTML -->
-  
-
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-  <p>Nothing to see here...</p>
-  <!-- Project -->
-  <script src="main.js"></script>
-</body>
-</html>
-</textarea>
-<textarea name="cssEditor" id="cssEditor" cols="35" class="cssEditor" rows="42">body {
-font-size: 15pt;
-}</textarea>
-<textarea name="jsEditor" id="jsEditor" cols="35" class="jsEditor" rows="42">
-console.log("hello world!")
-</textarea>
-<div class="outputEditor">
-console.log("hello world!")
-</div>
-</div>
-</div>
-  <script src="main.js"></script>
-</body>
+            <button type="button" class="run-btn" onclick="runCode()">
+                RUN
+            </button>
+            
+            <div class="app-output"></div>
+        </div>
+        <script src="main.js"></script>
+    </body>
 </html>

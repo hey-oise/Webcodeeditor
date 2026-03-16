@@ -1,53 +1,96 @@
- let nameProject = prompt('give your project a name!');
- if (nameProject == '' || nameProject === null) {
-    nameProject = 'untitled-project';
- }
-const header = document.querySelector('.header');
-header.innerText =  ' title: ' + nameProject;
-const htmlEditor = document.querySelector('.htmlEditor');
-const cssEditor = document.querySelector('.cssEditor');
-const jaEditor = document.querySelector('.jsEditor');
-const editor = document.querySelector('.editors');
-const htmlBtnTab = document.querySelector('.html');
-const cssBtnTab = document.querySelector('.css');
-const jsBtnTab = document.querySelector('.js');
-const outputBtnTab = document.querySelector('.output');
-const output = document.querySelector('.outputEditor');
-let loc = 0;
-editor.style.left =  -loc + 'vw';
-function moveTabs(move) {
-   // Tab to edit
-   loc = move;
-   console.log(loc)
-   editor.style.left =  -loc + 'vw';
+const nameTitle = prompt("name your project");
+const title = document.querySelector(".projectName");
 
-if (loc === 0) {
-   htmlBtnTab.style.borderTopWidth = '2px';
-   cssBtnTab.style.borderTopWidth = '.3px';
-jsBtnTab.style.borderTopWidth = '.3px';
-outputBtnTab.style.borderTopWidth = '.3px';
-     
-} else if (loc === 100) {
-   cssBtnTab.style.borderTopWidth = '2px';
-   jsBtnTab.style.borderTopWidth = '.3px';
-   htmlBtnTab.style.borderTopWidth = '.3px';
-   outputBtnTab.style.borderTopWidth = '.3px';
-} else if (loc === 200) {
-   jsBtnTab.style.borderTopWidth = '2px';
-   htmlBtnTab.style.borderTopWidth = '.3px';
+const htmlEditor = document.querySelector(".editor1");
+const cssEditor = document.querySelector(".editor2");
+const jsEditor = document.querySelector(".editor3");
+const output = document.querySelector(".app-output");
 
-   cssBtnTab.style.borderTopWidth = '.3px';
-outputBtnTab.style.borderTopWidth = '.3px';
+const htmlTab = document.querySelector(".tab1");
+const cssTab = document.querySelector(".tab2");
+const jsTab = document.querySelector(".tab3");
 
-} else if (loc === 300) {
-   outputBtnTab.style.borderTopWidth = '2px';
-   cssBtnTab.style.borderTopWidth = '.3px';
-jsBtnTab.style.borderTopWidth = '.3px';
-htmlBtnTab.style.borderTopWidth = '.3px';
-run()
-}
+
+
+
+let currentTab = "html";
+
+if (nameTitle) {
+  title.innerText = nameTitle;
+} else {
+  title.innerText = "Untitled Project";
 }
 
-function run() {
-output.innerHTML = htmlEditor.value + '<style type="text/css" media="all">' + cssEditor.value + '</style>' + '<script>' + jsEditor + '</script>'
+if (currentTab === "html") {
+  htmlTab.style.backgroundColor = "#212121";
+  htmlTab.style.borderBottom = "none";
+  cssTab.style.borderBottom = "solid .5px #3d444d";
+  cssTab.style.backgroundColor = "#2b2a33";
+  jsTab.style.backgroundColor = "#2b2a33";
+  jsTab.style.borderBottom = "solid .5px #3d444d";
+  htmlEditor.style.display = "flex";
+  cssEditor.style.display = "none";
+  jsEditor.style.display = "none";
+} else if (currentTab === "css") {
+  cssTab.style.backgroundColor = "#212121";
+  cssTab.style.borderBottom = "none";
+  htmlTab.style.backgroundColor = "#2b2a33";
+  htmlTab.style.borderBottom = "solid .5px #3d444d";
+  jsTab.style.backgroundColor = "#2b2a33";
+  jsTab.style.borderBottom = "solid .5px #3d444d";
+  cssEditor.style.display = "flex";
+  htmlEditor.style.display = "none";
+  jsEditor.style.display = "none";
+} else if (currentTab === "js") {
+  jsTab.style.backgroundColor = "#212121";
+  jsTab.style.borderBottom = "none";
+  htmlTab.style.borderBottom = "solid .5px #3d444d";
+  htmlTab.style.backgroundColor = "#2b2a33";
+  cssTab.style.borderBottom = "solid .5px #3d444d";
+  cssTab.style.backgroundColor = "#2b2a33";
+  jsEditor.style.display = "flex";
+  htmlEditor.style.display = "none";
+  cssEditor.style.display = "none";
+}
+  
+  output.innerHTML = htmlEditor.value + "<style>" + cssEditor.value + "</style>" + "<script>" + jsEditor.value + "</script>";
+function runCode() {
+  output.innerHTML = htmlEditor.value + "<style>" + cssEditor.value + "</style>" + "<script>" + jsEditor.value + "</script>";
+  document.scripts(jsEditor.value);
+}
+
+function switchTabs(tabTo) {
+
+  currentTab = tabTo;
+  if (currentTab === "html") {
+    htmlTab.style.backgroundColor = "#212121";
+    htmlTab.style.borderBottom = "none";
+    cssTab.style.borderBottom = "solid .5px #3d444d";
+    cssTab.style.backgroundColor = "#2b2a33";
+    jsTab.style.backgroundColor = "#2b2a33";
+    jsTab.style.borderBottom = "solid .5px #3d444d";
+    htmlEditor.style.display = "flex";
+    cssEditor.style.display = "none";
+    jsEditor.style.display = "none";
+  } else if (currentTab === "css") {
+    cssTab.style.backgroundColor = "#212121";
+    cssTab.style.borderBottom = "none";
+    htmlTab.style.backgroundColor = "#2b2a33";
+    htmlTab.style.borderBottom = "solid .5px #3d444d";
+    jsTab.style.backgroundColor = "#2b2a33";
+    jsTab.style.borderBottom = "solid .5px #3d444d";
+    cssEditor.style.display = "flex";
+    htmlEditor.style.display = "none";
+    jsEditor.style.display = "none";
+  } else if (currentTab === "js") {
+    jsTab.style.backgroundColor = "#212121";
+    jsTab.style.borderBottom = "none";
+    htmlTab.style.borderBottom = "solid .5px #3d444d";
+    htmlTab.style.backgroundColor = "#2b2a33";
+    cssTab.style.borderBottom = "solid .5px #3d444d";
+    cssTab.style.backgroundColor = "#2b2a33";
+    jsEditor.style.display = "flex";
+    htmlEditor.style.display = "none";
+    cssEditor.style.display = "none";
+  }
 }
