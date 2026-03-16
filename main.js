@@ -53,10 +53,28 @@ if (currentTab === "html") {
   cssEditor.style.display = "none";
 }
   
-  output.innerHTML = htmlEditor.value + "<style>" + cssEditor.value + "</style>" + "<script>" + jsEditor.value + "</script>";
+output.innerHTML =` <!DOCTYPE html>
+                <html>
+                <head>
+                    <style>${cssEditor.value}</style>
+                </head>
+                <body>
+                    ${htmlEditor.value}
+                    <script>${jsEditor.value}<\/script>
+                </body>
+                </html>`;
+
 function runCode() {
-  output.innerHTML = htmlEditor.value + "<style>" + cssEditor.value + "</style>" + "<script>" + jsEditor.value + "</script>";
-  document.scripts(jsEditor.value);
+  output.innerHTML = `<!DOCTYPE html>
+                <html>
+                <head>
+                    <style>${cssEditor.value}</style>
+                </head>
+                <body>
+                    ${htmlEditor.value}
+                    <script>${jsEditor.value}<\/script>
+                </body>
+                </html>`;
 }
 
 function switchTabs(tabTo) {
